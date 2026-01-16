@@ -1,0 +1,428 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #0f1b18 0%, #0a5c42 100%);
+  min-height: 100vh;
+}
+
+/* Rivendell + Rayluxeo Hybrid Styles */
+@layer components {
+  /* Text Styles */
+  .elven-text {
+    font-family: "Georgia", serif;
+    letter-spacing: 0.05em;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply px-8 py-3 bg-primary text-light font-semibold rounded-lg hover:bg-secondary transition-all duration-300 ease-out;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-light transition-all duration-300 rounded-lg;
+  }
+
+  .btn-animated {
+    @apply px-6 py-3 bg-brand-blue text-white rounded-full font-semibold shadow-lg transition-all duration-300;
+  }
+
+  .btn-anim-primary {
+    @apply bg-brand-blue hover:bg-blue-600 text-white;
+  }
+
+  .btn-anim-secondary {
+    @apply bg-transparent border-2 border-gray-300 text-gray-700 dark:border-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800;
+  }
+
+  /* Cards */
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-light mb-6 elven-text;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #c49c6c 0%, #d4a574 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card {
+    @apply bg-secondary/50 backdrop-blur-md border border-primary/20 rounded-xl p-6 hover:border-primary/50 transition-all duration-300;
+  }
+
+  .modern-card {
+    @apply bg-white/70 dark:bg-dark-card/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-3xl;
+  }
+
+  .glass-nav {
+    @apply bg-white/30 dark:bg-gray-900/30 backdrop-blur-2xl border border-white/20 dark:border-gray-700/20;
+  }
+
+  .glass-placeholder {
+    @apply bg-white/10 dark:bg-gray-900/10 backdrop-blur-xl border border-white/20 dark:border-gray-700/20 rounded-3xl;
+  }
+
+  .service-card {
+    @apply modern-card p-8 hover:border-brand-blue/50 dark:hover:border-brand-blue/50 transition-all duration-300 cursor-pointer;
+  }
+
+  .service-card-arrow {
+    @apply transition-all duration-300 group-hover:translate-x-2 group-hover:translate-y-2;
+  }
+
+  /* Marquee Content */
+  .marquee-content {
+    @apply flex-shrink-0 flex items-center space-x-8 px-4;
+  }
+
+  .marquee-content-reverse {
+    @apply flex-shrink-0 flex items-center space-x-8 px-4;
+  }
+
+  /* Input Styles */
+  .input-glow {
+    @apply animate-input-glow;
+  }
+
+  /* Reveal Animation */
+  .reveal {
+    @apply opacity-0;
+  }
+
+  .reveal.visible {
+    @apply opacity-100 transition-opacity duration-700;
+  }
+
+  /* Selection Styles */
+  .select-button {
+    @apply relative px-4 py-3 rounded-xl bg-gray-100 dark:bg-dark-bg border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-blue text-left flex justify-between items-center;
+  }
+
+  .select-dropdown {
+    @apply hidden absolute top-full left-0 right-0 mt-2 p-2 rounded-xl shadow-lg z-10 bg-white/70 dark:bg-dark-card/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50;
+  }
+
+  .select-option {
+    @apply p-3 rounded-lg hover:bg-brand-blue/10 dark:hover:bg-brand-blue/20 cursor-pointer transition-colors;
+  }
+
+  /* Special Cards */
+  .package-popular-animated {
+    @apply relative;
+  }
+
+  .package-popular-animated::before {
+    content: "";
+    @apply absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300;
+  }
+
+  /* Floating Buttons */
+  .floating-whatsapp-btn {
+    @apply fixed bottom-8 right-8 w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-40 hover:scale-110;
+  }
+
+  .floating-appointment-btn {
+    @apply fixed bottom-24 right-8 w-14 h-14 rounded-full bg-brand-blue text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-40 hover:scale-110 animate-btn-pulse;
+  }
+
+  /* Modal Styles */
+  .appointment-modal {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  }
+
+  .appointment-modal-overlay {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm;
+  }
+
+  .appointment-modal-content {
+    @apply relative bg-white dark:bg-dark-bg rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 z-50;
+  }
+
+  .appointment-modal-header {
+    @apply flex justify-between items-center mb-8 pb-6 border-b border-gray-200 dark:border-gray-700;
+  }
+
+  .appointment-modal-title {
+    @apply text-3xl font-grotesk font-bold text-gray-900 dark:text-white;
+  }
+
+  .appointment-modal-close {
+    @apply p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors;
+  }
+
+  /* Calendar & Time Picker */
+  .calendar-popup {
+    @apply hidden absolute top-full left-0 mt-2 bg-white dark:bg-dark-card rounded-2xl shadow-lg p-4 z-20 border border-gray-200 dark:border-gray-700;
+  }
+
+  .calendar-header {
+    @apply flex justify-between items-center mb-4;
+  }
+
+  .calendar-nav-btn {
+    @apply p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors;
+  }
+
+  .calendar-month-year {
+    @apply font-semibold text-gray-900 dark:text-white;
+  }
+
+  .calendar-weekdays {
+    @apply grid grid-cols-7 gap-1 mb-2;
+  }
+
+  .calendar-weekday {
+    @apply text-center text-sm font-medium text-gray-600 dark:text-gray-400 py-1;
+  }
+
+  .calendar-days {
+    @apply grid grid-cols-7 gap-1;
+  }
+
+  .calendar-day {
+    @apply p-2 text-center text-sm rounded hover:bg-brand-blue/10 transition-colors cursor-pointer;
+  }
+
+  .calendar-day.today {
+    @apply bg-brand-blue text-white font-bold;
+  }
+
+  .calendar-day.other-month {
+    @apply text-gray-300 dark:text-gray-600 cursor-not-allowed;
+  }
+
+  .time-popup {
+    @apply hidden absolute top-full left-0 mt-2 bg-white dark:bg-dark-card rounded-2xl shadow-lg p-4 z-20 border border-gray-200 dark:border-gray-700;
+  }
+
+  .time-picker-header {
+    @apply flex justify-center items-center mb-4;
+  }
+
+  .time-display {
+    @apply flex items-center gap-4;
+  }
+
+  .time-section {
+    @apply flex flex-col items-center;
+  }
+
+  .time-label {
+    @apply text-xs font-medium text-gray-600 dark:text-gray-400 uppercase mb-1;
+  }
+
+  .time-scroll {
+    @apply h-24 overflow-y-auto;
+  }
+
+  .time-options {
+    @apply flex flex-col;
+  }
+
+  .time-option {
+    @apply p-2 text-center cursor-pointer hover:bg-brand-blue/10 rounded;
+  }
+
+  .time-option.selected {
+    @apply bg-brand-blue text-white font-bold;
+  }
+
+  .time-separator {
+    @apply text-2xl font-bold;
+  }
+
+  .time-picker-footer {
+    @apply flex gap-4 justify-center pt-4 border-t border-gray-200 dark:border-gray-700;
+  }
+
+  .time-btn {
+    @apply px-6 py-2 rounded-lg font-medium transition-colors;
+  }
+
+  .time-btn-primary {
+    @apply bg-brand-blue text-white hover:bg-blue-600;
+  }
+
+  .time-btn-secondary {
+    @apply bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600;
+  }
+
+  /* Universal Popup */
+  .universal-popup {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4 hidden;
+  }
+
+  .universal-popup-overlay {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm;
+  }
+
+  .universal-popup-content {
+    @apply relative bg-white dark:bg-dark-bg rounded-2xl shadow-2xl max-w-sm w-full p-8 text-center z-50;
+  }
+
+  .popup-icon-wrapper {
+    @apply flex justify-center mb-4;
+  }
+
+  .popup-icon {
+    @apply w-16 h-16 text-green-500;
+  }
+
+  .popup-title {
+    @apply text-2xl font-bold text-gray-900 dark:text-white mb-2;
+  }
+
+  .popup-message {
+    @apply text-gray-600 dark:text-gray-400 mb-6;
+  }
+
+  .popup-buttons {
+    @apply flex gap-3 justify-center;
+  }
+
+  .popup-btn {
+    @apply px-6 py-2 rounded-lg font-medium transition-colors;
+  }
+
+  .popup-btn-primary {
+    @apply bg-brand-blue text-white hover:bg-blue-600;
+  }
+
+  .popup-btn-secondary {
+    @apply bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600;
+  }
+
+  /* Top Bar */
+  .top-bar-animated-bg {
+    @apply absolute inset-0 bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-[length:200%_100%] animate-marquee;
+  }
+
+  .fade-in {
+    @apply animate-fade-in;
+  }
+
+  .fade-out {
+    @apply opacity-0 transition-opacity duration-300;
+  }
+
+  .animation-fade-in-up {
+    @apply animate-fade-in-up;
+  }
+
+  /* Query Loader */
+  .query-loader {
+    @apply w-8 h-8 border-4 border-gray-300 dark:border-gray-600 border-t-brand-blue rounded-full animate-spin;
+  }
+
+  /* Cursor */
+  .cursor-dot {
+    @apply fixed w-2 h-2 bg-brand-blue rounded-full pointer-events-none z-50 hidden;
+  }
+
+  .cursor-outline {
+    @apply fixed w-8 h-8 border-2 border-brand-blue rounded-full pointer-events-none z-50 hidden;
+  }
+
+  /* Portfolio Grid */
+  .project-item {
+    @apply transition-all duration-300;
+  }
+
+  .product-card-link {
+    @apply hover:border-brand-blue/50 transition-all duration-300 cursor-pointer;
+  }
+
+  /* Mobile Link */
+  .mobile-link {
+    @apply transition-colors duration-200;
+  }
+
+  /* Client Logo Glow */
+  .client-logo-glow {
+    @apply hover:shadow-lg hover:shadow-brand-blue/50 transition-all duration-300;
+  }
+
+  /* Video Glow */
+  .video-glow-abstract {
+    @apply relative;
+  }
+
+  .video-glow-abstract::before {
+    content: "";
+    @apply absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300;
+  }
+
+  /* Hero Background */
+  .hero-bg-abstract {
+    @apply absolute inset-0 opacity-20;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
