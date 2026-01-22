@@ -1,87 +1,90 @@
+import { Icon } from "@/src/components/Icon";
+import Link from "next/link";
+
 export default function Services() {
   const services = [
     {
       id: "web",
       title: "Web Development",
-      icon: "🌐",
-      description: "Modern, fast, and conversion-focused websites built for performance and scalability.",
+      iconName: "Globe",
+      description: "Websites crafted with the care of elven architects — responsive, swift, built with Next.js and React for enduring performance.",
       features: [
-        "Custom website design (UI/UX)",
-        "Business & corporate websites",
-        "Landing pages & funnels",
-        "E-commerce websites",
-        "SEO-friendly architecture",
-        "Hosting & maintenance support",
+        "Custom responsive design (mobile-first)",
+        "SEO optimization & fast load times",
+        "Business websites & landing pages",
+        "E-commerce platforms with payment integration",
+        "CMS integration (easy content updates)",
+        "Hosting setup & ongoing maintenance",
       ],
     },
     {
       id: "ai",
       title: "AI Solutions & AI Agents",
-      icon: "🤖",
-      description: "Smart AI systems that work like digital employees for your business.",
+      iconName: "Bot",
+      description: "Like the wise counsel of old, our AI serves tirelessly — automating tasks, enhancing service, providing insights sharp as mithril.",
       features: [
-        "AI chatbots (website, WhatsApp, social)",
-        "Custom AI agents",
-        "Knowledge-base AI assistants",
-        "AI-powered analytics",
-        "Task automation using AI",
-        "Custom LLM integrations",
+        "AI chatbots for website, WhatsApp & social media",
+        "Custom AI agents for specific business tasks",
+        "RAG-based knowledge assistants",
+        "Intelligent process automation",
+        "Natural language processing (NLP) solutions",
+        "AI integration with existing tools",
       ],
     },
     {
       id: "design",
       title: "Graphic Design & Branding",
-      icon: "🎨",
-      description: "Visual identities that make brands unforgettable and impactful.",
+      iconName: "Palette",
+      description: "Banners and sigils worthy of the great houses — professional visual identities that herald your value across all realms.",
       features: [
-        "Logo & brand identity design",
-        "Social media creatives",
-        "Marketing banners & posters",
-        "Pitch decks & presentations",
-        "UI assets & brand guidelines",
-        "Brand strategy consultation",
+        "Complete logo & brand identity packages",
+        "Social media graphics & templates",
+        "Marketing collateral (brochures, flyers, banners)",
+        "Professional pitch decks & presentations",
+        "Brand style guides & UI kits",
+        "Brand positioning & messaging strategy",
       ],
     },
     {
       id: "automation",
       title: "Business Automation",
-      icon: "⚙️",
-      description: "Automate business operations to save time, money, and human effort.",
+      iconName: "Cog",
+      description: "Streamline your kingdom's operations — custom automation as reliable as dwarven machinery, freeing your fellowship for greater quests.",
       features: [
-        "Workflow automation",
-        "CRM & ERP automation",
-        "Email & WhatsApp automation",
-        "Lead management systems",
-        "Internal dashboards & reporting",
-        "API integrations",
+        "Custom workflow automation (Zapier, Make, n8n)",
+        "CRM & ERP system automation",
+        "Email marketing automation & sequences",
+        "Automated lead capture & nurturing",
+        "Custom dashboards & business intelligence",
+        "Third-party API integrations",
       ],
     },
     {
       id: "smm",
       title: "Social Media Marketing",
-      icon: "📱",
-      description: "Data-driven social strategies that convert followers into loyal customers.",
+      iconName: "Smartphone",
+      description: "Strategic campaigns that spread your word across the digital lands — authentic content and measured results that build loyal followings.",
       features: [
-        "Social media strategy & planning",
-        "Content creation & scheduling",
-        "Instagram, Facebook, LinkedIn, TikTok management",
-        "Paid ads setup & optimization",
-        "Analytics & performance reporting",
-        "Community management",
+        "Comprehensive social strategy & calendar",
+        "Professional content creation & copywriting",
+        "Multi-platform management (Instagram, Facebook, LinkedIn, TikTok)",
+        "Paid advertising campaigns & A/B testing",
+        "Detailed analytics & monthly reporting",
+        "Active community engagement & responses",
       ],
     },
     {
       id: "support",
       title: "Company IT & Tech Support",
-      icon: "🔐",
-      description: "Reliable technical infrastructure and ongoing support for your needs.",
+      iconName: "Lock",
+      description: "Steadfast guardians of your technical realm — keeping your systems secure and operational like the watchers at the gates.",
       features: [
-        "IT consulting",
-        "System setup & maintenance",
-        "Cloud services",
-        "Cybersecurity basics",
-        "Tech audits & optimization",
-        "24/7 technical support",
+        "Technology strategy & consulting",
+        "Cloud infrastructure setup (AWS, Azure, Google Cloud)",
+        "System monitoring & maintenance",
+        "Cybersecurity audits & implementation",
+        "Technology stack optimization",
+        "Ongoing technical support & troubleshooting",
       ],
     },
   ];
@@ -91,11 +94,11 @@ export default function Services() {
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold elven-text mb-6 leading-tight">
-            Our <span className="gradient-text">Services</span>
+          <h1 className="heading-1 mb-6 leading-tight">
+            The Council's <span className="text-primary-600">Crafts</span>
           </h1>
-          <p className="text-lg text-light/80 max-w-3xl mx-auto">
-            Comprehensive digital solutions designed to transform your business and help you thrive in the digital age.
+          <p className="text-body-lg text-neutral-600 max-w-3xl mx-auto">
+            From grand edifices to intelligent automation, we forge practical solutions that help UK businesses grow faster and work wiser.
           </p>
         </div>
       </section>
@@ -104,16 +107,18 @@ export default function Services() {
       <section className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => (
-            <div key={service.id} id={service.id} className="card group animate-fade-in" style={{ animationDelay: `${idx * 0.05}s` }}>
-              <div className="text-6xl mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+            <div key={service.id} id={service.id} className="card animate-fade-in" style={{ animationDelay: `${idx * 0.05}s` }}>
+              <div className="mb-6">
+                <Icon name={service.iconName as any} size={40} className="text-primary-600" />
+              </div>
+              <h3 className="heading-5 font-bold mb-3 text-neutral-900">
                 {service.title}
               </h3>
-              <p className="text-light/70 mb-6 text-sm leading-relaxed">{service.description}</p>
+              <p className="text-neutral-600 mb-6 text-sm leading-relaxed">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, i) => (
-                  <li key={i} className="text-sm text-light/60 flex items-start gap-2">
-                    <span className="text-primary mt-1">✓</span>
+                  <li key={i} className="text-sm text-neutral-600 flex items-start gap-2">
+                    <span className="text-primary-600 mt-1 flex-shrink-0">✓</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -124,15 +129,17 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="mt-20 py-20 px-6 md:px-12 bg-primary/20 border-y border-primary/30">
+      <section className="mt-20 py-20 px-6 md:px-12 bg-neutral-50 border-t border-neutral-200">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 elven-text">
-            Let's Build Something <span className="gradient-text">Extraordinary</span>
+          <h2 className="heading-2 mb-6">
+            Let's Forge Something <span className="text-primary-600">Legendary</span>
           </h2>
-          <p className="text-lg text-light/80 mb-8">
-            Ready to discover which services align with your vision?
+          <p className="text-body text-neutral-600 mb-8">
+            Come, let us council together. Discover which of our crafts align with your vision. Free guidance, honest fellowship.
           </p>
-          <button className="btn-primary">Schedule a Consultation</button>
+          <Link href="/contact" className="btn-primary inline-block">
+            Convene with the Council
+          </Link>
         </div>
       </section>
     </main>

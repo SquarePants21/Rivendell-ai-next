@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Icon } from "@/src/components/Icon";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -19,7 +20,6 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formState);
-    // Here you would typically send the form data to your backend
     alert("Thank you for reaching out! We'll contact you soon.");
     setFormState({ name: "", email: "", phone: "", company: "", message: "" });
   };
@@ -29,11 +29,11 @@ export default function Contact() {
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold elven-text mb-6 leading-tight">
-            Get in <span className="gradient-text">Touch</span>
+          <h1 className="heading-1 mb-6 leading-tight">
+            Make <span className="text-primary-600">Contact</span>
           </h1>
-          <p className="text-lg text-light/80 max-w-3xl mx-auto">
-            Ready to begin your digital transformation? We'd love to hear from you. Send us a message and we'll respond within 24 hours.
+          <p className="text-body-lg text-neutral-600 max-w-3xl mx-auto">
+            The gates of Rivendell stand open. Send word of your quest and we shall answer within a day's turning (oft much swifter). Free council, without burden.
           </p>
         </div>
       </section>
@@ -43,29 +43,31 @@ export default function Contact() {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {[
             {
-              icon: "📧",
-              title: "Email",
+              iconName: "Mail",
+              title: "Send Word",
               value: "contact@rivendellai.com",
-              desc: "We'll get back to you within 24 hours",
+              desc: "Your herald shall receive reply within 24 hours",
             },
             {
-              icon: "🌍",
-              title: "Location",
-              value: "Global (Remote-First)",
-              desc: "Serving clients worldwide",
+              iconName: "MapPin",
+              title: "Our Sanctuary",
+              value: "United Kingdom",
+              desc: "A remote fellowship serving UK realms",
             },
             {
-              icon: "⏰",
-              title: "Availability",
-              value: "24/7 Support",
-              desc: "We're always here when you need us",
+              iconName: "Clock",
+              title: "Swift Reply",
+              value: "Within One Day",
+              desc: "Usually same-day for urgent quests",
             },
           ].map((item, idx) => (
             <div key={idx} className="card text-center">
-              <div className="text-5xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-              <p className="text-primary font-semibold mb-2">{item.value}</p>
-              <p className="text-sm text-light/70">{item.desc}</p>
+              <div className="mb-4">
+                <Icon name={item.iconName as any} size={40} className="text-primary-600 mx-auto" />
+              </div>
+              <h3 className="heading-5 font-bold mb-2 text-neutral-900">{item.title}</h3>
+              <p className="text-primary-600 font-semibold mb-2">{item.value}</p>
+              <p className="text-sm text-neutral-600">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -76,26 +78,26 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Full Name *</label>
+                  <label className="label">Full Name *</label>
                   <input
                     type="text"
                     name="name"
                     value={formState.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 text-light placeholder-light/50 focus:outline-none focus:border-primary/80 transition-colors"
+                    className="input"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Email *</label>
+                  <label className="label">Email *</label>
                   <input
                     type="email"
                     name="email"
                     value={formState.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 text-light placeholder-light/50 focus:outline-none focus:border-primary/80 transition-colors"
+                    className="input"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -103,38 +105,38 @@ export default function Contact() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Phone</label>
+                  <label className="label">Phone</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formState.phone}
                     onChange={handleChange}
-                    className="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 text-light placeholder-light/50 focus:outline-none focus:border-primary/80 transition-colors"
+                    className="input"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Company</label>
+                  <label className="label">Company</label>
                   <input
                     type="text"
                     name="company"
                     value={formState.company}
                     onChange={handleChange}
-                    className="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 text-light placeholder-light/50 focus:outline-none focus:border-primary/80 transition-colors"
+                    className="input"
                     placeholder="Your company"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2">Message *</label>
+                <label className="label">Message *</label>
                 <textarea
                   name="message"
                   value={formState.message}
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 text-light placeholder-light/50 focus:outline-none focus:border-primary/80 transition-colors resize-none"
+                  className="textarea"
                   placeholder="Tell us about your project and how we can help..."
                 ></textarea>
               </div>
@@ -147,28 +149,28 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map/Service Areas */}
-      <section className="py-20 px-6 md:px-12 bg-primary/20 border-y border-primary/30">
+      {/* Why Rivendell */}
+      <section className="py-20 px-6 md:px-12 bg-neutral-50 border-y border-neutral-200">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 elven-text">Why Rivendell?</h2>
+          <h2 className="heading-2 text-center mb-12">Why Choose the Rivendell Council?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Expert Team",
-                description: "Specialists across web, AI, design, and automation with years of experience.",
+                title: "Veteran Fellowship",
+                description: "Developers, AI engineers, and designers with proven valor across many campaigns and industries.",
               },
               {
-                title: "Quick Response",
-                description: "We understand your business needs and provide tailored solutions fast.",
+                title: "Swift as the Wind",
+                description: "Most quests completed within 2-4 weeks. We move with both speed and craftsmanship.",
               },
               {
-                title: "Long-Term Partnership",
-                description: "We don't just build projects—we grow with you through continuous support.",
+                title: "True Counsel",
+                description: "No false promises, no hidden tolls. We speak plainly from the first meeting to the last.",
               },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-light/70">{item.description}</p>
+                <h3 className="heading-5 font-bold mb-3 text-neutral-900">{item.title}</h3>
+                <p className="text-neutral-600">{item.description}</p>
               </div>
             ))}
           </div>

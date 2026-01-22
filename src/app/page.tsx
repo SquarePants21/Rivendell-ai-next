@@ -1,74 +1,67 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { Icon } from "@/src/components/Icon";
 
 export default function Home() {
-  const [hoveredService, setHoveredService] = useState<number | null>(null);
+
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section - Premium Rayluxeo Style */}
+      {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-12">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 right-10 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
-          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-brand-blue/20 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: "4s" }}></div>
-        </div>
-
         <div className="relative z-10 text-center max-w-5xl px-6 md:px-12">
-          {/* Main Title with staggered animation */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold elven-text mb-6 leading-tight animate-fade-in-up">
+          {/* Main Title */}
+          <h1 className="heading-1 mb-6 leading-tight animate-fade-in">
             Rivendell
             <br />
-            <span className="gradient-text">AI Agency</span>
+            <span className="text-primary-600">The Council of AI Solutions</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-light/80 mb-8 font-light animate-fade-in-up max-w-2xl mx-auto" style={{ animationDelay: "0.2s" }}>
-            Elevating European businesses with cutting-edge AI solutions, modern web development, and strategic digital transformation.
+          <p className="text-body-lg text-neutral-600 mb-8 animate-fade-in max-w-2xl mx-auto" style={{ animationDelay: "0.2s" }}>
+            One Solution to Rule All Workflows — Your fellowship of expert developers and AI engineers, guiding UK businesses through their digital transformation journey.
           </p>
 
           {/* Supporting text */}
-          <p className="text-base md:text-lg text-light/70 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            From concept to launch, we provide the full stack of intelligent digital services.
+          <p className="text-body text-neutral-600 max-w-3xl mx-auto mb-12 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            Like the legendary haven where great councils convened, we bring together the finest minds in web development, AI engineering, and digital strategy to forge solutions that stand the test of time.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-            <Link href="/contact" className="btn-animated btn-anim-primary px-8 py-4 text-lg hover:-translate-y-1">
-              Start Your Project
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <Link href="/contact" className="btn-primary">
+              Begin Your Quest
             </Link>
-            <Link href="/services" className="btn-animated btn-anim-secondary px-8 py-4 text-lg hover:-translate-y-1">
-              Explore Services
+            <Link href="/services" className="btn-secondary">
+              Explore Our Council
             </Link>
           </div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+          {/* Value Props Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.6s" }}>
             <div className="card">
-              <div className="text-4xl font-bold gradient-text mb-2">25+</div>
-              <p className="text-light/70 text-sm">Companies Served</p>
+              <div className="text-4xl font-bold text-primary-600 mb-2">🏰</div>
+              <p className="text-neutral-600 text-sm">Your Digital Sanctuary</p>
             </div>
             <div className="card">
-              <div className="text-4xl font-bold gradient-text mb-2">100+</div>
-              <p className="text-light/70 text-sm">Projects Completed</p>
+              <div className="text-4xl font-bold text-primary-600 mb-2">£0</div>
+              <p className="text-neutral-600 text-sm">To Join the Council</p>
             </div>
             <div className="card">
-              <div className="text-4xl font-bold gradient-text mb-2">5+</div>
-              <p className="text-light/70 text-sm">Years Experience</p>
+              <div className="text-4xl font-bold text-primary-600 mb-2">⚡</div>
+              <p className="text-neutral-600 text-sm">Swift 2-4 Week Forging</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section - Modern Grid Layout */}
-      <section className="py-20 px-6 md:px-12">
+      {/* Services Section */}
+      <section className="py-20 px-6 md:px-12 bg-neutral-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="section-title">Our <span className="gradient-text">Services</span></h2>
-            <p className="text-light/70 text-lg">Comprehensive solutions tailored for European enterprises</p>
+            <h2 className="heading-2">Our <span className="text-primary-600">Services</span></h2>
+            <p className="text-neutral-600 text-lg mt-4">The Council's crafts — forged for UK businesses seeking their path to greatness</p>
           </div>
 
           {/* 3+3 Grid */}
@@ -76,36 +69,34 @@ export default function Home() {
             {[
               {
                 title: "Web Development",
-                description: "Building fast, responsive sites on modern frameworks and custom architectures.",
-                icon: "🌐",
+                description: "Crafted with the precision of elven smiths — fast, SEO-optimized websites built with Next.js and React. From landing pages to grand platforms.",
+                iconName: "Globe",
                 id: 0,
               },
               {
                 title: "AI & Automation",
-                description: "Intelligent solutions and agents that automate and optimize your business processes.",
-                icon: "🤖",
+                description: "Intelligent agents as tireless as the watchers of old — custom AI chatbots and workflow automation working round the clock.",
+                iconName: "Bot",
                 id: 1,
               },
               {
                 title: "Brand & Design",
-                description: "Stunning visuals and compelling brand identities for your digital presence.",
-                icon: "🎨",
+                description: "Visual banners worthy of the great halls — professional logos and brand identities that herald your business with distinction.",
+                iconName: "Palette",
                 id: 2,
               },
             ].map((service) => (
               <Link
                 key={service.id}
                 href="/services"
-                className="service-card group"
-                onMouseEnter={() => setHoveredService(service.id)}
-                onMouseLeave={() => setHoveredService(null)}
+                className="card-interactive"
               >
-                <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
-                  {service.icon}
+                <div className="mb-4">
+                  <Icon name={service.iconName as any} size={32} className="text-primary-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-accent mb-3 elven-text">{service.title}</h3>
-                <p className="text-light/70 mb-4 flex-grow">{service.description}</p>
-                <div className="flex items-center text-accent service-card-arrow">
+                <h3 className="heading-5 font-bold text-neutral-900 mb-3">{service.title}</h3>
+                <p className="text-neutral-600 mb-4 flex-grow text-sm">{service.description}</p>
+                <div className="flex items-center text-primary-600 font-medium text-sm">
                   <span>Learn more</span>
                   <span className="ml-2">→</span>
                 </div>
@@ -118,36 +109,34 @@ export default function Home() {
             {[
               {
                 title: "Social Media Marketing",
-                description: "Targeted campaigns that drive engagement and grow your audience.",
-                icon: "📱",
+                description: "Data-driven social campaigns, content creation, and community management across all major platforms.",
+                iconName: "Smartphone",
                 id: 3,
               },
               {
                 title: "IT Support & Consulting",
-                description: "Expert technical support and strategic IT consulting for your infrastructure.",
-                icon: "🛠️",
+                description: "Reliable technical infrastructure, cloud services, and ongoing support to keep your business running smoothly.",
+                iconName: "Settings",
                 id: 4,
               },
               {
                 title: "Digital Strategy",
-                description: "Comprehensive digital transformation and strategic roadmaps for growth.",
-                icon: "📊",
+                description: "Strategic roadmaps for digital transformation, technology audits, and growth planning tailored to SMBs.",
+                iconName: "BarChart3",
                 id: 5,
               },
             ].map((service) => (
               <Link
                 key={service.id}
                 href="/services"
-                className="service-card group"
-                onMouseEnter={() => setHoveredService(service.id)}
-                onMouseLeave={() => setHoveredService(null)}
+                className="card-interactive"
               >
-                <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
-                  {service.icon}
+                <div className="mb-4">
+                  <Icon name={service.iconName as any} size={32} className="text-primary-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-accent mb-3 elven-text">{service.title}</h3>
-                <p className="text-light/70 mb-4 flex-grow">{service.description}</p>
-                <div className="flex items-center text-accent service-card-arrow">
+                <h3 className="heading-5 font-bold text-neutral-900 mb-3">{service.title}</h3>
+                <p className="text-neutral-600 mb-4 flex-grow text-sm">{service.description}</p>
+                <div className="flex items-center text-primary-600 font-medium text-sm">
                   <span>Learn more</span>
                   <span className="ml-2">→</span>
                 </div>
@@ -156,71 +145,71 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/services" className="btn-primary inline-block">
+            <Link href="/services" className="btn-primary">
               View All Services
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us - Premium Design */}
-      <section className="py-20 px-6 md:px-12 bg-secondary/30 backdrop-blur border-t border-primary/20">
+      {/* Why Choose Us */}
+      <section className="py-20 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="section-title">Why Choose <span className="gradient-text">Rivendell</span></h2>
-            <p className="text-light/70 text-lg">Excellence, innovation, and partnership in every engagement</p>
+            <h2 className="heading-2">Why Choose <span className="text-primary-600">Rivendell</span></h2>
+            <p className="text-neutral-600 text-lg mt-4">Why journey with Rivendell: legendary AI craft, fellowship with UK SMBs, and paths flexible to your quest</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                icon: "✨",
-                title: "Innovation First",
-                description: "We leverage the latest technologies and AI methodologies to drive real results for your business.",
+                iconName: "Sparkles",
+                title: "Masters of AI Craft",
+                description: "Our dedicated AI engineer wields powers most agencies cannot — cutting-edge automation and intelligent solutions forged in the latest technologies.",
               },
               {
-                icon: "🤝",
-                title: "True Partnership",
-                description: "Your success is our success. We collaborate closely with you at every step of the journey.",
+                iconName: "Handshake",
+                title: "Fellowship with SMBs",
+                description: "We walk alongside growing businesses, understanding your trials. Our solutions are practical, affordable, and grow as your legend expands.",
               },
               {
-                icon: "🎯",
-                title: "Results Driven",
-                description: "Measurable outcomes and transparent reporting ensure accountability and business growth.",
+                iconName: "Target",
+                title: "Many Paths, One Goal",
+                description: "Whether fixed quests, monthly counsel, or hourly aid — we adapt to your journey. No binding scrolls or rigid contracts.",
               },
               {
-                icon: "🛡️",
-                title: "Trusted & Secure",
-                description: "Enterprise-grade security and reliability standards for your complete peace of mind.",
+                iconName: "Shield",
+                title: "Guardians of the Realm",
+                description: "UK-based sentinels, GDPR compliant, versed in the laws of these lands. Partner with those who know your kingdom.",
               },
             ].map((item, idx) => (
-              <div key={idx} className="card p-8 group hover:border-accent/50">
-                <div className="text-4xl mb-4 transition-transform group-hover:scale-110 duration-300">
-                  {item.icon}
+              <div key={idx} className="card p-8">
+                <div className="mb-4">
+                  <Icon name={item.iconName as any} size={32} className="text-primary-600" />
                 </div>
-                <h3 className="text-xl font-bold text-accent mb-3 elven-text">{item.title}</h3>
-                <p className="text-light/70">{item.description}</p>
+                <h3 className="heading-5 font-bold text-neutral-900 mb-3">{item.title}</h3>
+                <p className="text-neutral-600">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Premium */}
-      <section className="py-20 px-6 md:px-12">
+      {/* CTA Section */}
+      <section className="py-20 px-6 md:px-12 bg-neutral-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-light mb-6 elven-text animate-fade-in-up">
-            Ready to Transform Your Business?
+          <h2 className="heading-2 mb-6 animate-fade-in">
+            Ready to Embark on Your Digital Quest?
           </h2>
-          <p className="text-light/70 text-lg mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-            Let's discuss how Rivendell AI can help you achieve your digital goals and unlock new opportunities.
+          <p className="text-body text-neutral-600 mb-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            Gather with us for a free 30-minute council. We'll chart your path with honest wisdom and clear guidance — no obligations, just fellowship.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <Link href="/contact" className="btn-primary">
-              Get Started Today
+              Join the Council
             </Link>
             <Link href="/packages" className="btn-secondary">
-              View Pricing
+              View Quest Packages
             </Link>
           </div>
         </div>
