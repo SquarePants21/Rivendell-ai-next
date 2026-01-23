@@ -15,7 +15,7 @@ export default function Footer() {
               Rivendell
             </h3>
             <p className="text-neutral-600 text-sm leading-relaxed">
-              Intelligent Digital Solutions for the modern age.
+              The Council of AI Solutions. One Solution to Rule All Workflows.
             </p>
           </div>
 
@@ -91,8 +91,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-neutral-200 pt-8 text-center text-sm text-neutral-600">
+        <div className="border-t border-neutral-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-600">
           <p>&copy; {currentYear} Rivendell AI. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-primary-600 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-primary-600 transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/gdpr" className="hover:text-primary-600 transition-colors">
+              GDPR Compliance
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

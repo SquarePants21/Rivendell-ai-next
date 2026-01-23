@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Icon } from "@/src/components/Icon";
+import Link from "next/link";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -9,19 +10,26 @@ export default function Contact() {
     email: "",
     phone: "",
     company: "",
+    service: "",
     message: "",
+    gdpr: false,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormState((prev) => ({ ...prev, [name]: value }));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    const val = type === "checkbox" ? (e.target as HTMLInputElement).checked : value;
+    setFormState((prev) => ({ ...prev, [name]: val }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formState.gdpr) {
+      alert("Please agree to our privacy policy to continue.");
+      return;
+    }
     console.log("Form submitted:", formState);
     alert("Thank you for reaching out! We'll contact you soon.");
-    setFormState({ name: "", email: "", phone: "", company: "", message: "" });
+    setFormState({ name: "", email: "", phone: "", company: "", service: "", message: "", gdpr: false });
   };
 
   return (
@@ -112,20 +120,39 @@ export default function Contact() {
                     value={formState.phone}
                     onChange={handleChange}
                     className="input"
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="+44 0000 000000"
                   />
                 </div>
                 <div>
-                  <label className="label">Company</label>
-                  <input
-                    type="text"
-                    name="company"
-                    value={formState.company}
+                  <label className="label">Service Interest *</label>
+                  <select
+                    name="service"
+                    value={formState.service}
                     onChange={handleChange}
+                    required
                     className="input"
-                    placeholder="Your company"
-                  />
+                  >
+                    <option value="">Select a service...</option>
+                    <option value="web">Web Development</option>
+                    <option value="ai">AI & Automation</option>
+                    <option value="design">Brand & Design</option>
+                    <option value="strategy">Digital Strategy</option>
+                    <option value="support">IT Support</option>
+                    <option value="other">Other / General Inquiry</option>
+                  </select>
                 </div>
+              </div>
+
+              <div>
+                <label className="label">Company</label>
+                <input
+                  type="text"
+                  name="company"
+                  value={formState.company}
+                  onChange={handleChange}
+                  className="input"
+                  placeholder="Your company"
+                />
               </div>
 
               <div>
@@ -139,6 +166,21 @@ export default function Contact() {
                   className="textarea"
                   placeholder="Tell us about your project and how we can help..."
                 ></textarea>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  name="gdpr"
+                  id="gdpr"
+                  checked={formState.gdpr}
+                  onChange={handleChange}
+                  required
+                  className="mt-1"
+                />
+                <label htmlFor="gdpr" className="text-sm text-neutral-600">
+                  I agree to the <Link href="/privacy" className="text-primary-600 hover:underline">Privacy Policy</Link> and consent to being contacted regarding my inquiry. *
+                </label>
               </div>
 
               <button type="submit" className="btn-primary w-full">

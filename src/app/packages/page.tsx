@@ -116,6 +116,20 @@ export default function Packages() {
         </div>
       </section>
 
+      {/* Fixed-Price Projects */}
+      <section className="max-w-4xl mx-auto px-6 md:px-12 mb-20 text-center">
+        <div className="card bg-neutral-50 border-neutral-200">
+          <h3 className="heading-4 font-bold mb-4 text-neutral-900">Prefer a Fixed-Price Project?</h3>
+          <p className="text-neutral-600 mb-6">
+            While our subscription paths offer the best continuous value, we also undertake singular quests and fixed-price builds.
+            From MVPs to grand platform launches, we provide clear timelines and transparent, one-time investment quotes.
+          </p>
+          <Link href="/contact" className="text-primary-600 font-bold hover:underline">
+            Enquire about a fixed-price project →
+          </Link>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="bg-neutral-50 border-y border-neutral-200 py-20 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
