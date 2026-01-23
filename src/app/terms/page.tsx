@@ -15,7 +15,7 @@ export default function Terms() {
                         <section>
                             <h2 className="heading-3 mb-4">1. Engagement & Councils</h2>
                             <p className="text-neutral-600 mb-4">
-                                Our fellowship begins with a council (consultation) to understand your needs. By engaging our services, you agree to provide truthful information regarding your quest's requirements.
+                                Our fellowship begins with a council (consultation) to understand your needs. By engaging our services, you agree to provide truthful information regarding your quest&apos;s requirements.
                             </p>
                         </section>
 

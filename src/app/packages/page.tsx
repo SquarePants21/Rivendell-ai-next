@@ -172,7 +172,7 @@ export default function Packages() {
             Still Pondering Your Path?
           </h2>
           <p className="text-body text-neutral-600 mb-8">
-            We're here to help you find the perfect covenant for your quest's goals and treasury.
+            We&apos;re here to help you find the perfect covenant for your quest&apos;s goals and treasury.
           </p>
           <Link href="/contact" className="btn-primary inline-block">
             Seek Our Counsel

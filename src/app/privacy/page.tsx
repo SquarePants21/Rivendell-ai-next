@@ -34,7 +34,7 @@ export default function Privacy() {
                             <ul className="list-disc pl-6 text-neutral-600 space-y-2">
                                 <li>To respond to your inquiries regarding our quests.</li>
                                 <li>To provide the services agreed upon in our covenants.</li>
-                                <li>To send occasional updates about the council's wisdom (only if you opt-in).</li>
+                                <li>To send occasional updates about the council&apos;s wisdom (only if you opt-in).</li>
                             </ul>
                             <p className="text-neutral-600 mt-4 font-semibold italic">
                                 We never sell your data to other kingdoms or shadows.

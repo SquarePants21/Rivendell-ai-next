@@ -9,7 +9,7 @@ export default function GDPR() {
 
                     <div className="prose prose-neutral max-w-none space-y-8">
                         <p className="text-body-lg text-neutral-600">
-                            At <strong>RIVENDELL AI LIMITED</strong>, we treat data guardianship as a sacred duty. Our compliance framework is built upon the principles of transparency, security, and the "Sanctuary of Data."
+                            At <strong>RIVENDELL AI LIMITED</strong>, we treat data guardianship as a sacred duty. Our compliance framework is built upon the principles of transparency, security, and the &quot;Sanctuary of Data.&quot;
                         </p>
 
                         <section>
@@ -40,7 +40,7 @@ export default function GDPR() {
                         <section>
                             <h2 className="heading-3 mb-4">3. The Three Barriers of Security</h2>
                             <p className="text-neutral-600 mb-4">
-                                We protect the realm's data through:
+                                We protect the realm&apos;s data through:
                             </p>
                             <ul className="list-disc pl-6 text-neutral-600 space-y-2">
                                 <li><strong>Physical Gates:</strong> Cloud infrastructure hosted by industry leaders with SOC2/ISO 27001 certifications.</li>
@@ -52,7 +52,7 @@ export default function GDPR() {
                         <section>
                             <h2 className="heading-3 mb-4">4. Data Subject Requests</h2>
                             <p className="text-neutral-600 mb-4">
-                                Whether you are a Seeker on the Path or a Legend of the Council, you wield full rights over your data. You may request access, erasure, or portability at any time. We respond to all "Riddles of Data" within 30 days as required by UK law.
+                                Whether you are a Seeker on the Path or a Legend of the Council, you wield full rights over your data. You may request access, erasure, or portability at any time. We respond to all &quot;Riddles of Data&quot; within 30 days as required by UK law.
                             </p>
                         </section>
 

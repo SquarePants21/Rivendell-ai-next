@@ -41,7 +41,7 @@ export default function Contact() {
             Make <span className="text-primary-600">Contact</span>
           </h1>
           <p className="text-body-lg text-neutral-600 max-w-3xl mx-auto">
-            The gates of Rivendell stand open. Send word of your quest and we shall answer within a day's turning (oft much swifter). Free council, without burden.
+            The gates of Rivendell stand open. Send word of your quest and we shall answer within a day&apos;s turning (oft much swifter). Free council, without burden.
           </p>
         </div>
       </section>

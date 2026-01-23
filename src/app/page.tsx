@@ -61,7 +61,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="heading-2">Our <span className="text-primary-600">Services</span></h2>
-            <p className="text-neutral-600 text-lg mt-4">The Council's crafts — forged for UK businesses seeking their path to greatness</p>
+            <p className="text-neutral-600 text-lg mt-4">The Council&apos;s crafts — forged for UK businesses seeking their path to greatness</p>
           </div>
 
           {/* 3+3 Grid */}
@@ -202,7 +202,7 @@ export default function Home() {
             Ready to Embark on Your Digital Quest?
           </h2>
           <p className="text-body text-neutral-600 mb-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Gather with us for a free 30-minute council. We'll chart your path with honest wisdom and clear guidance — no obligations, just fellowship.
+            Gather with us for a free 30-minute council. We&apos;ll chart your path with honest wisdom and clear guidance — no obligations, just fellowship.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <Link href="/contact" className="btn-primary">

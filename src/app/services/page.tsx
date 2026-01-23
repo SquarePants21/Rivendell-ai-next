@@ -95,7 +95,7 @@ export default function Services() {
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="heading-1 mb-6 leading-tight">
-            The Council's <span className="text-primary-600">Crafts</span>
+            The Council&apos;s <span className="text-primary-600">Crafts</span>
           </h1>
           <p className="text-body-lg text-neutral-600 max-w-3xl mx-auto">
             From grand edifices to intelligent automation, we forge practical solutions that help UK businesses grow faster and work wiser.
@@ -132,7 +132,7 @@ export default function Services() {
       <section className="mt-20 py-20 px-6 md:px-12 bg-neutral-50 border-t border-neutral-200">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="heading-2 mb-6">
-            Let's Forge Something <span className="text-primary-600">Legendary</span>
+            Let&apos;s Forge Something <span className="text-primary-600">Legendary</span>
           </h2>
           <p className="text-body text-neutral-600 mb-8">
             Come, let us council together. Discover which of our crafts align with your vision. Free guidance, honest fellowship.
